@@ -1,0 +1,485 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Navegación */
+nav {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e50914;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #e50914;
+}
+
+/* Secciones */
+.section {
+    display: none;
+    padding-top: 70px;
+    min-height: 100vh;
+}
+
+.section.active {
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    height: 500px;
+    background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.03) 10px,
+        rgba(255, 255, 255, 0.03) 20px
+    );
+    animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+/* Botones */
+.btn-primary {
+    background: #fff;
+    color: #e50914;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Títulos de Sección */
+.section-title {
+    font-size: 2.5rem;
+    margin: 3rem 0 2rem 0;
+    text-align: center;
+    color: #e50914;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+/* Grid de Películas */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.movie-card {
+    background: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+}
+
+.movie-poster {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-icon {
+    font-size: 5rem;
+}
+
+.movie-info {
+    padding: 1.5rem;
+}
+
+.movie-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.genre {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: #e50914;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.btn-rent {
+    width: 100%;
+    padding: 0.8rem;
+    background: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-rent:hover {
+    background: #b20710;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.7rem 1.5rem;
+    background: #2a2a2a;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    border-color: #e50914;
+}
+
+.filter-btn.active {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+/* Catálogo */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.catalog-card {
+    background: #2a2a2a;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.catalog-card:hover {
+    transform: scale(1.05);
+    background: #333;
+}
+
+.catalog-poster {
+    height: 250px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.catalog-icon {
+    font-size: 4rem;
+}
+
+.catalog-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.catalog-genre {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.catalog-rating {
+    color: #ffd700;
+    margin: 0.5rem 0;
+}
+
+.catalog-price {
+    color: #e50914;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+/* Precios */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pricing-card {
+    background: #2a2a2a;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border-color: #e50914;
+}
+
+.pricing-card.featured {
+    background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: #ffd700;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.plan-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.plan-price {
+    margin: 1.5rem 0;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e50914;
+}
+
+.pricing-card.featured .price {
+    color: #fff;
+}
+
+.period {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.plan-features {
+    list-style: none;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.plan-features li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-plan {
+    width: 100%;
+    padding: 1rem;
+    background: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pricing-card.featured .btn-plan {
+    background: #fff;
+    color: #e50914;
+}
+
+.btn-plan:hover {
+    transform: scale(1.05);
+}
+
+/* Info Box */
+.info-box {
+    background: #2a2a2a;
+    padding: 3rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+}
+
+.info-box h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #e50914;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.info-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    color: #aaa;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.footer-content p {
+    color: #aaa;
+    margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+}

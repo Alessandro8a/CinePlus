@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePlus - Renta de Películas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">🎬 CinePlus</div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showSection('home')">Inicio</a></li>
+                <li><a href="#" onclick="showSection('catalogo')">Catálogo</a></li>
+                <li><a href="#" onclick="showSection('precios')">Precios</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN INICIO -->
+    <section id="home" class="section active">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Disfruta del Mejor Cine</h1>
+                <p>Miles de películas disponibles para rentar. Desde clásicos hasta los últimos estrenos.</p>
+                <button class="btn-primary" onclick="showSection('catalogo')">Ver Catálogo</button>
+            </div>
+        </div>
+
+        <!-- Películas Destacadas -->
+        <div class="container">
+            <h2 class="section-title">Películas Destacadas</h2>
+            <div class="movies-grid">
+                <div class="movie-card">
+                    <div class="movie-poster" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                        <span class="movie-icon">🎭</span>
+                    </div>
+                    <div class="movie-info">
+                        <h3>El Gran Drama</h3>
+                        <p class="genre">Drama • 2021</p>
+                        <p class="price">$3.99</p>
+                        <button class="btn-rent">Rentar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <span class="movie-icon">🚀</span>
+                    </div>
+                    <div class="movie-info">
+                        <h3>Aventura Espacial</h3>
+                        <p class="genre">Ciencia Ficción • 2023</p>
+                        <p class="price">$4.99</p>
+                        <button class="btn-rent">Rentar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <span class="movie-icon">😂</span>
+                    </div>
+                    <div class="movie-info">
+                        <h3>Comedia Loca</h3>
+                        <p class="genre">Comedia • 2023</p>
+                        <p class="price">$3.49</p>
+                        <button class="btn-rent">Rentar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-poster" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                        <span class="movie-icon">👻</span>
+                    </div>
+                    <div class="movie-info">
+                        <h3>Terror Nocturno</h3>
+                        <p class="genre">Terror • 2022</p>
+                        <p class="price">$4.49</p>
+                        <button class="btn-rent">Rentar Ahora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CATÁLOGO -->
+    <section id="catalogo" class="section">
+        <div class="container">
+            <h2 class="section-title">Catálogo Completo</h2>
+            
+            <!-- Filtros -->
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterMovies('todos')">Todos</button>
+                <button class="filter-btn" onclick="filterMovies('accion')">Acción</button>
+                <button class="filter-btn" onclick="filterMovies('comedia')">Comedia</button>
+                <button class="filter-btn" onclick="filterMovies('drama')">Drama</button>
+                <button class="filter-btn" onclick="filterMovies('terror')">Terror</button>
+            </div>
+
+            <!-- Lista de Películas -->
+            <div class="catalog-grid">
+                <div class="catalog-card" data-category="accion">
+                    <div class="catalog-poster" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                        <span class="catalog-icon">💥</span>
+                    </div>
+                    <h3>Acción Extrema</h3>
+                    <p class="catalog-genre">Acción</p>
+                    <p class="catalog-rating">⭐ 4.5/5</p>
+                    <p class="catalog-price">$3.99</p>
+                </div>
+
+                <div class="catalog-card" data-category="comedia">
+                    <div class="catalog-poster" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                        <span class="catalog-icon">😄</span>
+                    </div>
+                    <h3>Risas Sin Fin</h3>
+                    <p class="catalog-genre">Comedia</p>
+                    <p class="catalog-rating">⭐ 4.2/5</p>
+                    <p class="catalog-price">$2.99</p>
+                </div>
+
+                <div class="catalog-card" data-category="drama">
+                    <div class="catalog-poster" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                        <span class="catalog-icon">🎭</span>
+                    </div>
+                    <h3>Historias Reales</h3>
+                    <p class="catalog-genre">Drama</p>
+                    <p class="catalog-rating">⭐ 4.8/5</p>
+                    <p class="catalog-price">$4.49</p>
+                </div>
+
+                <div class="catalog-card" data-category="terror">
+                    <div class="catalog-poster" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                        <span class="catalog-icon">🎃</span>
+                    </div>
+                    <h3>Pesadilla</h3>
+                    <p class="catalog-genre">Terror</p>
+                    <p class="catalog-rating">⭐ 4.0/5</p>
+                    <p class="catalog-price">$3.49</p>
+                </div>
+
+                <div class="catalog-card" data-category="accion">
+                    <div class="catalog-poster" style="background: linear-gradient(135deg, #16a085, #1abc9c);">
+                        <span class="catalog-icon">🏃</span>
+                    </div>
+                    <h3>Velocidad Fatal</h3>
+                    <p class="catalog-genre">Acción</p>
+                    <p class="catalog-rating">⭐ 4.3/5</p>
+                    <p class="catalog-price">$3.99</p>
+                </div>
+
+                <div class="catalog-card" data-category="comedia">
+                    <div class="catalog-poster" style="background: linear-gradient(135deg, #e67e22, #d35400);">
+                        <span class="catalog-icon">🤣</span>
+                    </div>
+                    <h3>Locura Total</h3>
+                    <p class="catalog-genre">Comedia</p>
+                    <p class="catalog-rating">⭐ 4.6/5</p>
+                    <p class="catalog-price">$2.99</p>
+                </div>
+
+                <div class="catalog-card" data-category="drama">
+                    <div class="catalog-poster" style="background: linear-gradient(135deg, #34495e, #2c3e50);">
+                        <span class="catalog-icon">💔</span>
+                    </div>
+                    <h3>Lágrimas y Amor</h3>
+                    <p class="catalog-genre">Drama</p>
+                    <p class="catalog-rating">⭐ 4.7/5</p>
+                    <p class="catalog-price">$3.49</p>
+                </div>
+
+                <div class="catalog-card" data-category="terror">
+                    <div class="catalog-poster" style="background: linear-gradient(135deg, #c0392b, #8e44ad);">
+                        <span class="catalog-icon">☠️</span>
+                    </div>
+                    <h3>La Maldición</h3>
+                    <p class="catalog-genre">Terror</p>
+                    <p class="catalog-rating">⭐ 4.1/5</p>
+                    <p class="catalog-price">$4.99</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PRECIOS -->
+    <section id="precios" class="section">
+        <div class="container">
+            <h2 class="section-title">Planes de Renta</h2>
+            <p class="section-subtitle">Elige el plan que mejor se adapte a ti</p>
+
+            <div class="pricing-grid">
+                <!-- Plan Básico -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Básico</h3>
+                        <div class="plan-price">
+                            <span class="price">$9.99</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 5 películas al mes</li>
+                        <li>✓ Calidad HD</li>
+                        <li>✓ 1 dispositivo</li>
+                        <li>✗ Sin descargas</li>
+                        <li>✗ Sin acceso anticipado</li>
+                    </ul>
+                    <button class="btn-plan">Elegir Plan</button>
+                </div>
+
+                <!-- Plan Estándar -->
+                <div class="pricing-card featured">
+                    <div class="badge">Más Popular</div>
+                    <div class="plan-header">
+                        <h3>Estándar</h3>
+                        <div class="plan-price">
+                            <span class="price">$14.99</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 15 películas al mes</li>
+                        <li>✓ Calidad Full HD</li>
+                        <li>✓ 2 dispositivos</li>
+                        <li>✓ Descargas ilimitadas</li>
+                        <li>✗ Sin acceso anticipado</li>
+                    </ul>
+                    <button class="btn-plan">Elegir Plan</button>
+                </div>
+
+                <!-- Plan Premium -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Premium</h3>
+                        <div class="plan-price">
+                            <span class="price">$19.99</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ Películas ilimitadas</li>
+                        <li>✓ Calidad 4K Ultra HD</li>
+                        <li>✓ 4 dispositivos</li>
+                        <li>✓ Descargas ilimitadas</li>
+                        <li>✓ Acceso anticipado a estrenos</li>
+                    </ul>
+                    <button class="btn-plan">Elegir Plan</button>
+                </div>
+            </div>
+
+            <!-- Información Adicional -->
+            <div class="info-box">
+                <h3>¿Por qué elegir CinePlus?</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">📺</div>
+                        <h4>Gran Variedad</h4>
+                        <p>Miles de títulos de todos los géneros</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⚡</div>
+                        <h4>Streaming Rápido</h4>
+                        <p>Sin interrupciones ni tiempos de carga</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">💳</div>
+                        <h4>Pago Seguro</h4>
+                        <p>Transacciones 100% protegidas</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <h4>Multiplataforma</h4>
+                        <p>Disponible en todos tus dispositivos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 CinePlus - Proyecto Universitario</p>
+            <p>Desarrollo Web - Tecnologías Frontend</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
