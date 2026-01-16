@@ -32,3 +32,7 @@ Negro (#1a1a1a, #000) - Fondo oscuro típico de plataformas de cine
 Gris (#2a2a2a, #aaa) - Elementos secundarios y texto
 
 Dorado (#ffd700) - Destacados y calificaciones
+
+Despliege:
+
+https://cine-plus-omega.vercel.app/
