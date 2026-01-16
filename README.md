@@ -24,7 +24,11 @@ Sin uso de frameworks o librerías externas
 Demostrar conocimientos fundamentales en desarrollo web frontend, incluyendo maquetación HTML, estilizado CSS moderno, interactividad con JavaScript puro y diseño responsive. El proyecto simula una experiencia real de usuario en una plataforma de streaming, implementando funcionalidades básicas pero efectivas como navegación por pestañas, sistema de filtros y feedback visual mediante alertas.
 
 Paleta de colores:
+
 Rojo (#e50914) - Color principal inspirado en Netflix
+
 Negro (#1a1a1a, #000) - Fondo oscuro típico de plataformas de cine
+
 Gris (#2a2a2a, #aaa) - Elementos secundarios y texto
+
 Dorado (#ffd700) - Destacados y calificaciones
